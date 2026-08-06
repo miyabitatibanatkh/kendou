@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Phase 1: 项目初始化
+Phase 2: OpenCV视频基础
 
 ## Completed
 
@@ -14,6 +14,10 @@ Phase 1: 项目初始化
 - 创建虚拟环境 .venv
 - 安装 requirements.txt 依赖
 - 验证关键依赖 import 成功
+- 创建 src/video/reader.py
+- 实现 open_video 函数
+- 验证不存在的视频路径会抛出 FileNotFoundError
+- 验证真实视频可以成功打开
 
 ## Current task
 
@@ -21,7 +25,7 @@ Phase 1: 项目初始化
 
 ## Next task
 
-检查 Phase 1 是否完成。
+读取视频第一帧。
 
 ## Problems
 
@@ -29,5 +33,5 @@ Phase 1: 项目初始化
 
 ## Last verification
 
-- Command: python -c "import cv2, mediapipe, streamlit, pandas, pytest; print('ok')"
-- Result: ok
+- Command: python -c "from src.video.reader import open_video; cap = open_video('E:/vedio draft/20261005第51回練馬剣道大会.mp4'); print(cap.isOpened()); cap.release()"
+- Result: True
