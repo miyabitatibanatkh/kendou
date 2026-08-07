@@ -8,7 +8,7 @@ def create_video_writer(output_path: str | Path, fps: float, width: int, height:
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     writer = cv2.VideoWriter(str(path), fourcc, fps, (width, height))
 
-    if  writer.isOpened():
+    if writer.isOpened():
         return writer
     else:
         writer.release()
