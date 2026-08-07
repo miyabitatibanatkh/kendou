@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Phase 2: OpenCV视频基础
+Phase 3: 通用几何计算
 
 ## Completed
 
@@ -34,6 +34,9 @@ Phase 2: OpenCV视频基础
 - 验证 VideoWriter 可以正确释放
 - 整理 Phase 2 代码格式
 - 验证整理后仍可读取并写入一帧
+- 创建 src/analysis/geometry.py
+- 实现 midpoint 函数
+- 验证 midpoint 可以计算两点中点
 
 ## Current task
 
@@ -41,7 +44,7 @@ Phase 2: OpenCV视频基础
 
 ## Next task
 
-进入 Phase 3：创建 src/analysis/geometry.py
+实现 distance 函数
 
 ## Problems
 
@@ -49,5 +52,5 @@ Phase 2: OpenCV视频基础
 
 ## Last verification
 
-- Command: python -c "from src.video.reader import open_video, get_video_properties, release_video; from src.video.writer import create_video_writer, write_frame, release_writer; cap = open_video(r'data\input\test_input.MP4'); props = get_video_properties(cap); ret, frame = cap.read(); writer = create_video_writer(r'data\output\format_check.mp4', props['fps'], props['width'], props['height']); write_frame(writer, frame); release_writer(writer); release_video(cap); print(ret)"
-- Result: True, format_check.mp4 created
+- Command: python -c "from src.analysis.geometry import midpoint; print(midpoint((0, 0), (4, 2)))"
+- Result: (2.0, 1.0)
