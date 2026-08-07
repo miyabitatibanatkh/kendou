@@ -37,6 +37,8 @@ Phase 3: 通用几何计算
 - 创建 src/analysis/geometry.py
 - 实现 midpoint 函数
 - 验证 midpoint 可以计算两点中点
+- 实现 distance 函数
+- 验证 distance 可以计算两点距离
 
 ## Current task
 
@@ -44,7 +46,7 @@ Phase 3: 通用几何计算
 
 ## Next task
 
-实现 distance 函数
+实现 angle_between_three_points 函数
 
 ## Problems
 
@@ -52,5 +54,5 @@ Phase 3: 通用几何计算
 
 ## Last verification
 
-- Command: python -c "from src.analysis.geometry import midpoint; print(midpoint((0, 0), (4, 2)))"
-- Result: (2.0, 1.0)
+- Command: python -c "from src.analysis.geometry import distance; print(distance((0, 0), (3, 4)))"
+- Result: 5.0
