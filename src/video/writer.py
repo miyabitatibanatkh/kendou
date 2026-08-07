@@ -18,3 +18,7 @@ def create_video_writer(output_path: str | Path, fps: float, width: int, height:
 def write_frame(writer: cv2.VideoWriter, frame: cv2.Mat) -> None:
     writer.write(frame)
 
+
+def release_writer(writer: cv2.VideoWriter) -> None:
+    if writer.isOpened():
+        writer.release()

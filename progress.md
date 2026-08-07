@@ -30,6 +30,8 @@ Phase 2: OpenCV视频基础
 - 验证可以写入一帧到输出视频
 - 验证可以写入前 30 帧到输出视频
 - 给 create_video_writer 添加打开失败检查
+- 实现 release_writer 函数
+- 验证 VideoWriter 可以正确释放
 
 ## Current task
 
@@ -37,7 +39,7 @@ Phase 2: OpenCV视频基础
 
 ## Next task
 
-添加 release_writer 函数
+整理 Phase 2 代码格式
 
 ## Problems
 
@@ -45,5 +47,5 @@ Phase 2: OpenCV视频基础
 
 ## Last verification
 
-- Command: python -c "from src.video.writer import create_video_writer; writer = create_video_writer(r'data\output\writer_check.mp4', 30.0, 1280, 720); print(writer.isOpened()); writer.release()"
-- Result: True
+- Command: python -c "from src.video.writer import create_video_writer, release_writer; writer = create_video_writer(r'data\output\writer_release_check.mp4', 30.0, 1280, 720); print(writer.isOpened()); release_writer(writer); print(writer.isOpened())"
+- Result: True, False
