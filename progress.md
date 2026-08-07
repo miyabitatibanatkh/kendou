@@ -20,6 +20,7 @@ Phase 2: OpenCV视频基础
 - 验证真实视频可以成功打开
 - 成功读取视频第一帧
 - 成功获取视频 FPS、宽度、高度和总帧数
+- 成功循环读取全部帧
 
 ## Current task
 
@@ -27,7 +28,7 @@ Phase 2: OpenCV视频基础
 
 ## Next task
 
-循环读取全部帧
+正确释放视频资源
 
 ## Problems
 
