@@ -41,6 +41,8 @@ Phase 3: 通用几何计算
 - 验证 distance 可以计算两点距离
 - 实现 angle_between_three_points 函数
 - 验证 angle_between_three_points 可以计算三点夹角
+- 实现 angle_from_vertical 函数
+- 验证 angle_from_vertical 可以计算相对垂直线角度
 
 ## Current task
 
@@ -48,7 +50,7 @@ Phase 3: 通用几何计算
 
 ## Next task
 
-实现 angle_from_vertical 函数
+为 geometry.py 编写单元测试
 
 ## Problems
 
@@ -56,5 +58,5 @@ Phase 3: 通用几何计算
 
 ## Last verification
 
-- Command: python -c "from src.analysis.geometry import angle_between_three_points; print(angle_between_three_points((0, 0), (1, 0), (2, 0))); print(angle_between_three_points((0, 0), (1, 0), (1, 1)))"
-- Result: 180.0, 90.0
+- Command: python -c "from src.analysis.geometry import angle_from_vertical; print(angle_from_vertical((0, 0), (0, 10))); print(angle_from_vertical((0, 0), (10, 0))); print(angle_from_vertical((0, 0), (10, 10)))"
+- Result: 0.0, 90.0, 45.0
