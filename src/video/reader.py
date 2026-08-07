@@ -29,3 +29,13 @@ def get_video_properties(cap: cv2.VideoCapture) -> dict:
         "height": int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)),
     }
     return properties
+
+def count_video_frames(cap: cv2.VideoCapture) -> int:
+    frame_count = 0
+    while True:
+        ret, _ = cap.read()
+        if not ret:
+            break
+        frame_count += 1
+    return frame_count
+
