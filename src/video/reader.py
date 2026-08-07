@@ -39,3 +39,7 @@ def count_video_frames(cap: cv2.VideoCapture) -> int:
         frame_count += 1
     return frame_count
 
+def release_video(cap: cv2.VideoCapture) -> None:
+    if cap.isOpened():
+        cap.release()
+

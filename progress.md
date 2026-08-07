@@ -21,6 +21,8 @@ Phase 2: OpenCV视频基础
 - 成功读取视频第一帧
 - 成功获取视频 FPS、宽度、高度和总帧数
 - 成功循环读取全部帧
+- 实现 release_video 函数
+- 验证视频资源可以正确释放
 
 ## Current task
 
@@ -28,7 +30,7 @@ Phase 2: OpenCV视频基础
 
 ## Next task
 
-正确释放视频资源
+创建 src/video/writer.py
 
 ## Problems
 
@@ -36,5 +38,5 @@ Phase 2: OpenCV视频基础
 
 ## Last verification
 
-- Command: python -c "from src.video.reader import open_video; cap = open_video('E:/vedio draft/20261005第51回練馬剣道大会.mp4'); print(cap.isOpened()); cap.release()"
-- Result: True
+- Command: python -c "from src.video.reader import open_video, release_video; cap = open_video(r'E:\vedio draft\20261005第51回練馬剣道大会.mp4'); print(cap.isOpened()); release_video(cap); print(cap.isOpened())"
+- Result: True, False
