@@ -20,3 +20,12 @@ def read_first_frame(cap: cv2.VideoCapture) -> cv2.Mat:
         raise ValueError("Failed to read a frame from the video. The video may be corrupted or in an unsupported format.")
 
     return frame
+
+def get_video_properties(cap: cv2.VideoCapture) -> dict:
+    properties = {
+        "frame_count": int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),
+        "fps": cap.get(cv2.CAP_PROP_FPS),
+        "width": int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
+        "height": int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)),
+    }
+    return properties
