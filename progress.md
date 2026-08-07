@@ -39,6 +39,8 @@ Phase 3: 通用几何计算
 - 验证 midpoint 可以计算两点中点
 - 实现 distance 函数
 - 验证 distance 可以计算两点距离
+- 实现 angle_between_three_points 函数
+- 验证 angle_between_three_points 可以计算三点夹角
 
 ## Current task
 
@@ -46,7 +48,7 @@ Phase 3: 通用几何计算
 
 ## Next task
 
-实现 angle_between_three_points 函数
+实现 angle_from_vertical 函数
 
 ## Problems
 
@@ -54,5 +56,5 @@ Phase 3: 通用几何计算
 
 ## Last verification
 
-- Command: python -c "from src.analysis.geometry import distance; print(distance((0, 0), (3, 4)))"
-- Result: 5.0
+- Command: python -c "from src.analysis.geometry import angle_between_three_points; print(angle_between_three_points((0, 0), (1, 0), (2, 0))); print(angle_between_three_points((0, 0), (1, 0), (1, 1)))"
+- Result: 180.0, 90.0
