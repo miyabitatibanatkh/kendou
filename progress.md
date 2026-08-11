@@ -51,14 +51,15 @@ Phase 4：人体姿态识别
 - 已实现 create_pose_detector 函数
 - 已下载 models/pose_landmarker.task 模型文件
 - 验证 create_pose_detector 可以成功创建 PoseLandmarker
+- 已创建 detect_pose 函数结构
 
 ## Current task
 
-为 detector.py 添加处理单帧图像的函数结构。
+实现 detect_pose，将 OpenCV frame 转成 MediaPipe Image 并执行检测。
 
 ## Next task
 
-实现 detect_pose，接收一帧图像并返回姿态识别结果。
+验证 detect_pose 可以处理一张测试图片或视频第一帧。
 
 ## Problems
 
