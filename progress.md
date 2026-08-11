@@ -57,20 +57,20 @@ Phase 4：人体姿态识别
 - 已实现 get_landmark 函数
 - 已实现 get_landmark 函数
 - 验证 get_landmark 在没有检测到人体时返回 None
+- 已为 get_landmark 添加索引边界单元测试
+- 验证 get_landmark 对负数和超出范围的索引返回 None
 
 ## Current task
 
-为 get_landmark 添加简单单元测试。
+为 get_landmark 添加索引边界单元测试。
 
 ## Next task
 
-测试 get_landmark 在索引非法时返回 None。
+将归一化关键点坐标转换为像素坐标。
 
 ## Problems
 
-- 当前 MediaPipe 使用新版 Tasks API，不支持旧版 mp.solutions.pose 写法。
-
 ## Last verification
 
-- Command: python -c "from pathlib import Path; import numpy as np; from src.pose.detector import create_pose_detector, detect_pose; from src.pose.landmarks import get_landmark; detector = create_pose_detector(Path('models/pose_landmarker.task')); frame = np.zeros((480, 640, 3), dtype=np.uint8); result = detect_pose(detector, frame); print(get_landmark(result, 0)); detector.close()"
-- Result: None
+- Command: python -m pytest tests/test_landmarks.py
+- Result: 5 passed
