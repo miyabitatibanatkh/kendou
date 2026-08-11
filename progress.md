@@ -43,20 +43,24 @@ Phase 3: 通用几何计算
 - 验证 angle_between_three_points 可以计算三点夹角
 - 实现 angle_from_vertical 函数
 - 验证 angle_from_vertical 可以计算相对垂直线角度
+- 已为 midpoint 编写单元测试
+- 已为 distance 编写单元测试
+- 已为 angle_between_three_points 编写单元测试
+- 已为 angle_from_vertical 编写单元测试
 
 ## Current task
 
-更新 progress.md
+检查 geometry.py 和 test_geometry.py 的代码风格。
 
 ## Next task
 
-为 geometry.py 编写单元测试
+开始 Phase 4：人体姿态识别，创建 src/pose/detector.py。
 
 ## Problems
 
-- 暂无
+- progress.md 之前出现乱码，已准备改为 UTF-8 中文内容。
 
 ## Last verification
 
-- Command: python -c "from src.analysis.geometry import angle_from_vertical; print(angle_from_vertical((0, 0), (0, 10))); print(angle_from_vertical((0, 0), (10, 0))); print(angle_from_vertical((0, 0), (10, 10)))"
-- Result: 0.0, 90.0, 45.0
+- Command: python -m pytest tests/test_geometry.py
+- Result: 4 passed in 0.02s
