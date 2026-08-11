@@ -52,14 +52,16 @@ Phase 4：人体姿态识别
 - 已下载 models/pose_landmarker.task 模型文件
 - 验证 create_pose_detector 可以成功创建 PoseLandmarker
 - 已创建 detect_pose 函数结构
+- 已实现 detect_pose 函数
+- 验证 detect_pose 可以处理一帧图像并返回 PoseLandmarkerResult
 
 ## Current task
 
-实现 detect_pose，将 OpenCV frame 转成 MediaPipe Image 并执行检测。
+创建 src/pose/landmarks.py，用于读取指定人体关键点。
 
 ## Next task
 
-验证 detect_pose 可以处理一张测试图片或视频第一帧。
+实现 get_landmark，按关键点索引取得单个 landmark。
 
 ## Problems
 
@@ -67,5 +69,7 @@ Phase 4：人体姿态识别
 
 ## Last verification
 
-- Command: python -c "from pathlib import Path; from src.pose.detector import create_pose_detector; detector = create_pose_detector(Path('models/pose_landmarker.task')); print(type(detector)); detector.close()"
-- Result: 成功输出 PoseLandmarker 类型
+## Last verification
+
+- Command: python -c "from pathlib import Path; import numpy as np; from src.pose.detector import create_pose_detector, detect_pose; detector = create_pose_detector(Path('models/pose_landmarker.task')); frame = np.zeros((480, 640, 3), dtype=np.uint8); result = detect_pose(detector, frame); print(type(result)); print(len(result.pose_landmarks)); detector.close()"
+- Result: 成功输出 PoseLandmarkerResult，pose_landmarks 数量为 0
