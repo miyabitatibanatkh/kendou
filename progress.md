@@ -59,18 +59,22 @@ Phase 4：人体姿态识别
 - 验证 get_landmark 在没有检测到人体时返回 None
 - 已为 get_landmark 添加索引边界单元测试
 - 验证 get_landmark 对负数和超出范围的索引返回 None
+- 已实现 landmark_to_pixel 函数
+- 已将归一化关键点坐标转换为像素坐标
+- 已为 landmark_to_pixel 添加单元测试
+- 验证 640×480 图像中的坐标 (0.25, 0.5) 可转换为 (160, 240)
 
 ## Current task
 
-为 get_landmark 添加索引边界单元测试。
+实现并测试归一化关键点坐标到像素坐标的转换。
 
 ## Next task
 
-将归一化关键点坐标转换为像素坐标。
+检查关键点的 visibility 可信度。
 
 ## Problems
 
 ## Last verification
 
-- Command: python -m pytest tests/test_landmarks.py
-- Result: 5 passed
+- Command: python -m pytest
+- Result: 6 passed in 0.08s
