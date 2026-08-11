@@ -47,20 +47,24 @@ Phase 4：人体姿态识别
 - 已为 distance 编写单元测试
 - 已为 angle_between_three_points 编写单元测试
 - 已为 angle_from_vertical 编写单元测试
+- 已创建 src/pose/detector.py
+- 已实现 create_pose_detector 函数
+- 已下载 models/pose_landmarker.task 模型文件
+- 验证 create_pose_detector 可以成功创建 PoseLandmarker
 
 ## Current task
 
-检查 geometry.py 和 test_geometry.py 的代码风格。
+为 detector.py 添加处理单帧图像的函数结构。
 
 ## Next task
 
-开始 Phase 4：人体姿态识别，创建 src/pose/detector.py。
+实现 detect_pose，接收一帧图像并返回姿态识别结果。
 
 ## Problems
 
-- progress.md 之前出现乱码，已准备改为 UTF-8 中文内容。
+- 当前 MediaPipe 使用新版 Tasks API，不支持旧版 mp.solutions.pose 写法。
 
 ## Last verification
 
-- Command: python -m pytest tests/test_geometry.py
-- Result: 4 passed in 0.02s
+- Command: python -c "from pathlib import Path; from src.pose.detector import create_pose_detector; detector = create_pose_detector(Path('models/pose_landmarker.task')); print(type(detector)); detector.close()"
+- Result: 成功输出 PoseLandmarker 类型
