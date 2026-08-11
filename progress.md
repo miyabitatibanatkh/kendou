@@ -61,13 +61,11 @@ Phase 4：人体姿态识别
 
 ## Next task
 
-实现 get_landmark，按关键点索引取得单个 landmark。
+实现 get_landmark，从检测结果中取得指定人体关键点。
 
 ## Problems
 
 - 当前 MediaPipe 使用新版 Tasks API，不支持旧版 mp.solutions.pose 写法。
-
-## Last verification
 
 ## Last verification
 
