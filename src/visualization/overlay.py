@@ -57,3 +57,37 @@ def draw_kendo_skeleton(frame, points, color=(0, 255, 0)):
         KENDO_SKELETON_CONNECTIONS,
         color=color,
     )
+
+
+def draw_metrics_text(frame, metrics, origin=(10, 30), color=(255, 255, 255)):
+    x, y = origin
+    line_height = 20
+
+    labels = {
+        "left_elbow_angle": "Left elbow",
+        "right_elbow_angle": "Right elbow",
+        "left_shoulder_angle": "Left shoulder",
+        "right_shoulder_angle": "Right shoulder",
+        "body_lean_angle": "Body lean",
+        "hand_center_offset": "Hand center offset",
+        "hand_height_offset": "Hand height offset",
+    }
+
+    for index, key in enumerate(labels):
+        if key not in metrics:
+            continue
+
+        text = f"{labels[key]}: {metrics[key]:.1f}"
+
+        cv2.putText(
+            frame,
+            text,
+            (x, y + index * line_height),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.5,
+            color,
+            1,
+            cv2.LINE_AA,
+        )
+
+    return frame
