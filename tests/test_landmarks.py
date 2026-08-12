@@ -1,4 +1,5 @@
 from types import SimpleNamespace
+from src.analysis.kendo_metrics import calculate_frame_metrics
 from src.pose.landmarks import (get_landmark, 
                                 landmark_to_pixel, 
                                 is_landmark_visible,
@@ -36,3 +37,33 @@ def test_is_landmark_visible():
 
     landmark_no_visibility = SimpleNamespace()
     assert is_landmark_visible(landmark_no_visibility) is False
+
+
+def test_calculate_frame_metrics_returns_expected_keys():
+    metrics = calculate_frame_metrics(
+        left_shoulder=(0, 2),
+        right_shoulder=(2, 2),
+        left_elbow=(0, 1),
+        right_elbow=(2, 1),
+        left_wrist=(0, 0),
+        right_wrist=(2, 0),
+        left_hip=(0, 4),
+        right_hip=(2, 4),
+    )
+
+    assert set(metrics.keys()) == {
+        "left_elbow_angle",
+        "right_elbow_angle",
+        "left_shoulder_angle",
+        "right_shoulder_angle",
+        "body_lean_angle",
+        "hand_center",
+        "hand_center_offset",
+        "hand_height_offset",
+    }
+
+    assert metrics["hand_center"] == (1.0, 0.0)
+    assert metrics["hand_center_offset"] == 0.0
+    assert metrics["hand_height_offset"] == 2.0
+
+
