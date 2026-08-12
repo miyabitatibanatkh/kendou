@@ -90,7 +90,6 @@ platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
 rootdir: E:\GitHub\kendou
 plugins: anyio-4.14.2
 collected 16 items                                                                              
-
 tests\test_geometry.py ....                                                               [ 25%]
 tests\test_kendo_metrics.py ........                                                      [ 75%]
 tests\test_landmarks.py ....                                                              [100%]
