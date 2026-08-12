@@ -97,4 +97,4 @@ Phase 6: 结果可视化
 ## Last verification
 
 - Command: python -m pytest
-- Result: 25passed in 0.22s
+- Result: 28 passed in 0.21s 
