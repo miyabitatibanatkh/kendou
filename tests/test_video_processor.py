@@ -39,7 +39,7 @@ def test_process_video_writes_output_video(tmp_path, monkeypatch):
 
     create_test_video(input_path, frame_count=3)
 
-    def fake_detect_pose(detector, frame):
+    def fake_detect_pose(detector, frame, timestamp_ms):
         return create_fake_pose_result()
 
     monkeypatch.setattr(

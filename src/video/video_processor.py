@@ -10,6 +10,8 @@ def process_video(input_path, output_path, detector):
     cap = open_video(input_path)
     writer = None
     processed_frame_count = 0
+    detected_frame_count = 0
+    missing_pose_frame_count = 0
 
     try:
         properties = get_video_properties(cap)
@@ -27,8 +29,15 @@ def process_video(input_path, output_path, detector):
             if not ret:
                 break
 
-            result = detect_pose(detector, frame)
-            processed_frame, _ = process_detected_frame(frame, result)
+            timestamp_ms = int(processed_frame_count * 1000 / properties["fps"])
+            result = detect_pose(detector, frame, timestamp_ms)
+            processed_frame, metrics = process_detected_frame(frame, result)
+
+            if metrics is None:
+                missing_pose_frame_count += 1
+            else:
+                detected_frame_count += 1
+
             write_frame(writer, processed_frame)
             processed_frame_count += 1
 
@@ -42,4 +51,9 @@ def process_video(input_path, output_path, detector):
         "input_path": str(Path(input_path)),
         "output_path": str(Path(output_path)),
         "processed_frame_count": processed_frame_count,
+        "detected_frame_count": detected_frame_count,
+        "missing_pose_frame_count": missing_pose_frame_count,
+        "fps": properties["fps"],
+        "width": properties["width"],
+        "height": properties["height"],
     }
