@@ -1,5 +1,5 @@
 import numpy as np
-from src.visualization.overlay import (KENDO_SKELETON_CONNECTIONS, draw_kendo_skeleton, draw_metrics_text, draw_point,draw_line, draw_skeleton)
+from src.visualization.overlay import (KENDO_SKELETON_CONNECTIONS, draw_kendo_analysis_overlay, draw_kendo_skeleton, draw_metrics_text, draw_point,draw_line, draw_skeleton)
 
 def test_draw_point_changes_frame_pixel():
     frame = np.zeros((100, 100, 3), dtype=np.uint8)
@@ -85,5 +85,32 @@ def test_draw_metrics_text_changes_frame_pixels():
     }
 
     result = draw_metrics_text(frame, metrics)
+
+    assert result.sum() > 0
+
+
+def test_draw_kendo_analysis_overlay_changes_frame_pixels():
+    frame = np.zeros((160, 320, 3), dtype=np.uint8)
+
+    points = {
+        "left_shoulder": (50, 40),
+        "right_shoulder": (120, 40),
+        "left_elbow": (45, 80),
+        "left_wrist": (40, 120),
+        "right_elbow": (125, 80),
+        "right_wrist": (130, 120),
+        "left_hip": (60, 140),
+        "right_hip": (110, 140),
+    }
+
+    metrics = {
+        "left_elbow_angle": 142.5,
+        "right_elbow_angle": 138.2,
+        "body_lean_angle": 17.3,
+        "hand_center_offset": -12.0,
+        "hand_height_offset": 24.5,
+    }
+
+    result = draw_kendo_analysis_overlay(frame, points, metrics)
 
     assert result.sum() > 0

@@ -91,3 +91,9 @@ def draw_metrics_text(frame, metrics, origin=(10, 30), color=(255, 255, 255)):
         )
 
     return frame
+
+
+def draw_kendo_analysis_overlay(frame, points, metrics):
+    draw_kendo_skeleton(frame, points)
+    draw_metrics_text(frame, metrics)
+    return frame
