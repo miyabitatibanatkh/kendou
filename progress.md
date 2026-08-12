@@ -79,6 +79,7 @@ Phase 6: 结果可视化
 - 实现 draw_metrics_text 指标文本绘制
 - 实现 draw_kendo_analysis_overlay 组合绘制骨架和指标文本
 - 实现 extract_kendo_points，将 MediaPipe 关键点转换为像素坐标
+- 实现 calculate_metrics_from_points，从关键点字典计算剑道指标
 
 
 

@@ -4,6 +4,7 @@ from src.analysis.kendo_metrics import (
     calculate_elbow_angle,
     calculate_hand_center,
     calculate_hand_center_offset,
+    calculate_metrics_from_points,
     calculate_shoulder_angle,
     calculate_hand_height_offset,
     calculate_frame_metrics,
@@ -99,3 +100,20 @@ def test_calculate_frame_metrics_returns_expected_keys():
     assert metrics["hand_height_offset"] == 2.0
 
 
+def test_calculate_metrics_from_points_returns_frame_metrics():
+    points = {
+        "left_shoulder": (0, 2),
+        "right_shoulder": (2, 2),
+        "left_elbow": (0, 1),
+        "right_elbow": (2, 1),
+        "left_wrist": (0, 0),
+        "right_wrist": (2, 0),
+        "left_hip": (0, 4),
+        "right_hip": (2, 4),
+    }
+
+    metrics = calculate_metrics_from_points(points)
+
+    assert metrics["hand_center"] == (1.0, 0.0)
+    assert metrics["hand_center_offset"] == 0.0
+    assert metrics["hand_height_offset"] == 2.0

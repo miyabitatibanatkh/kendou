@@ -1,5 +1,4 @@
 from types import SimpleNamespace
-from src.analysis.kendo_metrics import calculate_frame_metrics
 from src.pose.landmarks import (get_landmark, 
                                 landmark_to_pixel, 
                                 is_landmark_visible,

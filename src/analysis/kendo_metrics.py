@@ -53,3 +53,16 @@ def calculate_frame_metrics(
         "hand_center_offset": calculate_hand_center_offset(hand_center, body_center),
         "hand_height_offset": calculate_hand_height_offset(hand_center, shoulder_midpoint),
     }
+
+
+def calculate_metrics_from_points(points):
+    return calculate_frame_metrics(
+        left_shoulder=points["left_shoulder"],
+        right_shoulder=points["right_shoulder"],
+        left_elbow=points["left_elbow"],
+        right_elbow=points["right_elbow"],
+        left_wrist=points["left_wrist"],
+        right_wrist=points["right_wrist"],
+        left_hip=points["left_hip"],
+        right_hip=points["right_hip"],
+    )
