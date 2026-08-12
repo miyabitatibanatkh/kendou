@@ -77,19 +77,20 @@ Phase 6: 结果可视化
 - 已定义并测试 KENDO_SKELETON_CONNECTIONS 默认骨架连接关系
 - 已实现并测试 draw_kendo_skeleton 默认剑道骨架绘制
 - 实现 draw_metrics_text 指标文本绘制
+- 实现 draw_kendo_analysis_overlay 组合绘制骨架和指标文本
 
 
 ## Current task
 
-在视频帧中绘制角度和偏移数值
+生成带分析结果的输出视频
 
 ## Next task
 
-生成带分析结果的输出视频
+逐帧读取视频并写入叠加结果
 
 ## Problems
 
 ## Last verification
 
 - Command: python -m pytest
-- Result: 22 passed in 0.22s
+- Result: 23 passed in 0.22s
