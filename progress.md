@@ -66,28 +66,29 @@ Phase 4：人体姿态识别
 - 已实现并测试关键点 visibility 可信度检查
 - 已实现并测试 elbow angle 计算
 - 已实现并测试 shoulder angle 计算
+- 已实现并测试 body lean angle 计算
+- 已实现并测试 hand center 计算
 
 ## Current task
 
-实现身体前倾角度计算
+使用左右手腕中点计算双手中心位置
 
 ## Next task
 
-使用肩膀中点和臀部中点计算身体躯干相对垂直方向的角度
+计算手部中心点相对身体中心线的位置变化
 
 ## Problems
 
 ## Last verification
 
-(.venv) E:\GitHub\kendou>python -m pytest
 ===================================== test session starts ======================================
 platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
 rootdir: E:\GitHub\kendou
 plugins: anyio-4.14.2
-collected 9 items                                                                               
+collected 11 items                                                                              
 
-tests\test_geometry.py ....                                                               [ 44%]
-tests\test_kendo_metrics.py ..                                                            [ 66%]
+tests\test_geometry.py ....                                                               [ 36%]
+tests\test_kendo_metrics.py ....                                                          [ 72%]
 tests\test_landmarks.py ...                                                               [100%]
 
-====================================== 9 passed in 0.04s =======================================
+====================================== 11 passed in 0.04s ======================================
