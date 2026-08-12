@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Phase 4：人体姿态识别
+Phase 6: 结果可视化
 
 ## Completed
 
@@ -70,29 +70,29 @@ Phase 4：人体姿态识别
 - 已实现并测试 hand center 计算
 - 已实现并测试 hand center offset 计算
 - 已实现并测试 hand height offset 计算
+- 已实现并测试 frame-level kendo metrics 汇总
 
 
 ## Current task
 
-计算手部中心点相对肩膀高度的位置
+Phase 6: 结果可视化
 
 ## Next task
 
-整理基础剑道指标函数并准备连接 MediaPipe 关键点
+在视频帧上绘制关键点和连线
 
 ## Problems
 
 ## Last verification
 
-(.venv) E:\GitHub\kendou>python -m pytest
 ===================================== test session starts ======================================
 platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
 rootdir: E:\GitHub\kendou
 plugins: anyio-4.14.2
-collected 13 items                                                                              
+collected 16 items                                                                              
 
-tests\test_geometry.py ....                                                               [ 30%]
-tests\test_kendo_metrics.py ......                                                        [ 76%]
-tests\test_landmarks.py ...                                                               [100%]
+tests\test_geometry.py ....                                                               [ 25%]
+tests\test_kendo_metrics.py ........                                                      [ 75%]
+tests\test_landmarks.py ....                                                              [100%]
 
-====================================== 13 passed in 0.05s ======================================
+====================================== 16 passed in 0.05s ======================================
