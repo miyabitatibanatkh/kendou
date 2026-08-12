@@ -3,6 +3,7 @@ from src.analysis.kendo_metrics import calculate_frame_metrics
 from src.pose.landmarks import (get_landmark, 
                                 landmark_to_pixel, 
                                 is_landmark_visible,
+                                extract_kendo_points,
 )
 
 def test_get_landmark_returns_none_for_invaild_index():
@@ -39,3 +40,32 @@ def test_is_landmark_visible():
     assert is_landmark_visible(landmark_no_visibility) is False
 
 
+def test_extract_kendo_points_returns_required_pixel_points():
+    landmarks = [SimpleNamespace(x=0, y=0, visibility=1.0) for _ in range(33)]
+
+    landmarks[11] = SimpleNamespace(x=0.1, y=0.2, visibility=1.0)
+    landmarks[12] = SimpleNamespace(x=0.2, y=0.2, visibility=1.0)
+    landmarks[13] = SimpleNamespace(x=0.1, y=0.4, visibility=1.0)
+    landmarks[14] = SimpleNamespace(x=0.2, y=0.4, visibility=1.0)
+    landmarks[15] = SimpleNamespace(x=0.1, y=0.6, visibility=1.0)
+    landmarks[16] = SimpleNamespace(x=0.2, y=0.6, visibility=1.0)
+    landmarks[23] = SimpleNamespace(x=0.1, y=0.8, visibility=1.0)
+    landmarks[24] = SimpleNamespace(x=0.2, y=0.8, visibility=1.0)
+
+    result = SimpleNamespace(pose_landmarks=[landmarks])
+
+    points = extract_kendo_points(result, frame_width=1000, frame_height=500)
+
+    assert points["left_shoulder"] == (100, 100)
+    assert points["right_hip"] == (200, 400)
+
+
+def test_extract_kendo_points_returns_none_when_required_landmark_is_not_visible():
+    landmarks = [SimpleNamespace(x=0, y=0, visibility=1.0) for _ in range(33)]
+    landmarks[11] = SimpleNamespace(x=0.1, y=0.2, visibility=0.1)
+
+    result = SimpleNamespace(pose_landmarks=[landmarks])
+
+    points = extract_kendo_points(result, frame_width=1000, frame_height=500)
+
+    assert points is None

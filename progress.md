@@ -78,19 +78,21 @@ Phase 6: 结果可视化
 - 已实现并测试 draw_kendo_skeleton 默认剑道骨架绘制
 - 实现 draw_metrics_text 指标文本绘制
 - 实现 draw_kendo_analysis_overlay 组合绘制骨架和指标文本
+- 实现 extract_kendo_points，将 MediaPipe 关键点转换为像素坐标
+
 
 
 ## Current task
 
-生成带分析结果的输出视频
+逐帧读取视频、检测姿态、计算指标并写入输出视频
 
 ## Next task
 
-逐帧读取视频并写入叠加结果
+生成带分析结果的输出视频
 
 ## Problems
 
 ## Last verification
 
 - Command: python -m pytest
-- Result: 23 passed in 0.22s
+- Result: 25passed in 0.22s
