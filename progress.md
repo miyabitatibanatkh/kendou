@@ -81,20 +81,22 @@ Phase 6: 结果可视化
 - 实现 extract_kendo_points，将 MediaPipe 关键点转换为像素坐标
 - 实现 calculate_metrics_from_points，从关键点字典计算剑道指标
 - 实现 process_detected_frame，处理单帧姿态结果并绘制分析信息
+- 实现 process_video，逐帧检测姿态、绘制分析结果并写入输出视频
+- 测试 process_video，可以逐帧处理并写入输出视频
 
 
 
 ## Current task
 
-逐帧读取视频、检测姿态、计算指标并写入输出视频
+测试整段视频分析流程
 
 ## Next task
 
-生成带分析结果的输出视频
+接入真实 MediaPipe 模型生成分析视频
 
 ## Problems
 
 ## Last verification
 
 - Command: python -m pytest
-- Result: 28 passed in 0.21s 
+- Result: 29 passed in 1.45s 
