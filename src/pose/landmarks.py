@@ -14,3 +14,14 @@ def landmark_to_pixel(landmark, frame_width: int, frame_height: int):
     pixel_x = int(landmark.x * frame_width)
     pixel_y = int(landmark.y * frame_height)
     return pixel_x, pixel_y
+
+
+def is_landmark_visible(landmark, min_visibility : float = 0.5) -> bool:
+    if landmark is None:
+        return False
+
+    visibility = getattr(landmark, 'visibility', None)
+    if visibility is None:
+        return False
+
+    return visibility >= min_visibility

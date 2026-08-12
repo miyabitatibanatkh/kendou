@@ -1,6 +1,8 @@
 from types import SimpleNamespace
-from src.pose.landmarks import get_landmark, landmark_to_pixel
-
+from src.pose.landmarks import (get_landmark, 
+                                landmark_to_pixel, 
+                                is_landmark_visible,
+)
 
 def test_get_landmark_returns_none_for_invaild_index():
     result  = SimpleNamespace(
@@ -22,3 +24,15 @@ def test_landmarks_to_pixel():
     )
 
     assert pixel == (160, 240)
+
+def test_is_landmark_visible():
+    landmark = SimpleNamespace(visibility = 0.6)
+
+    assert is_landmark_visible(landmark, min_visibility=0.5) is True
+
+    assert is_landmark_visible(landmark, min_visibility=0.7) is False
+
+    assert is_landmark_visible(None) is False
+
+    landmark_no_visibility = SimpleNamespace()
+    assert is_landmark_visible(landmark_no_visibility) is False

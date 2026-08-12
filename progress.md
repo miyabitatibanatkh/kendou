@@ -63,18 +63,28 @@ Phase 4：人体姿态识别
 - 已将归一化关键点坐标转换为像素坐标
 - 已为 landmark_to_pixel 添加单元测试
 - 验证 640×480 图像中的坐标 (0.25, 0.5) 可转换为 (160, 240)
+- 已实现并测试关键点 visibility 可信度检查
 
 ## Current task
 
-实现并测试归一化关键点坐标到像素坐标的转换。
+实现剑道基础指标计算
 
 ## Next task
 
-检查关键点的 visibility 可信度。
+计算肩/肘/身体前倾角度
 
 ## Problems
 
 ## Last verification
 
-- Command: python -m pytest
-- Result: 6 passed in 0.08s
+(.venv) E:\GitHub\kendou>python -m pytest
+===================================== test session starts ======================================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
+rootdir: E:\GitHub\kendou
+plugins: anyio-4.14.2
+collected 7 items                                                                               
+
+tests\test_geometry.py ....                                                               [ 57%]
+tests\test_landmarks.py ...                                                               [100%]
+
+====================================== 7 passed in 0.05s =======================================
