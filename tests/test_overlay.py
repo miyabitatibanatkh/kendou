@@ -1,5 +1,5 @@
 import numpy as np
-from src.visualization.overlay import (draw_point,draw_line)
+from src.visualization.overlay import (draw_point,draw_line, draw_skeleton)
 
 def test_draw_point_changes_frame_pixel():
     frame = np.zeros((100, 100, 3), dtype=np.uint8)
@@ -19,3 +19,24 @@ def test_draw_line_changes_frame_pixels():
     result = draw_line(frame, (10, 10), (90, 10))
 
     assert result[10, 50].sum() > 0
+
+
+def test_draw_skeleton_changes_frame_pixels():
+    frame = np.zeros((100, 100, 3), dtype=np.uint8)
+
+    points = {
+        "left_shoulder": (10, 10),
+        "left_elbow": (50, 10),
+        "left_wrist": (90, 10),
+    }
+
+    connections = [
+        ("left_shoulder", "left_elbow"),
+        ("left_elbow", "left_wrist"),
+    ]
+
+    result = draw_skeleton(frame, points, connections)
+
+    assert result[10, 10].sum() > 0
+    assert result[10, 50].sum() > 0
+    assert result[10, 90].sum() > 0

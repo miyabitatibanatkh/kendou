@@ -21,3 +21,20 @@ def draw_line(frame, start_point, end_point, color=(0, 255, 0), thickness=2):
 
     return frame
 
+
+def draw_skeleton(frame, points, connections, color=(0, 255, 0)):
+    for start_name, end_name in connections:
+        if start_name not in points:
+            continue
+        if end_name not in points:
+            continue
+
+        start_point = points[start_name]
+        end_point = points[end_name]
+
+        draw_line(frame, start_point, end_point, color=color)
+
+    for point in points.values():
+        draw_point(frame, point, color=color)
+
+    return frame

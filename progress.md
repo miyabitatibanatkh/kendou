@@ -73,18 +73,19 @@ Phase 6: 结果可视化
 - 已实现并测试 frame-level kendo metrics 汇总
 - 已实现并测试 draw_point 关键点绘制
 - 已实现并测试 draw_line 骨架连线绘制
+- 已实现并测试 draw_skeleton 基础骨架绘制
 
 ## Current task
 
-实现基础骨架绘制
+组合多个关键点和连线绘制身体骨架
 
 ## Next task
 
-组合多个关键点和连线绘制身体骨架
+定义剑道姿态骨架连接关系
 
 ## Problems
 
 ## Last verification
 
 - Command: python -m pytest
-- Result: 18 passed in 0.18s
+- Result: 19 passed in 0.18s
