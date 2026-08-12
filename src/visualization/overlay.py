@@ -48,3 +48,12 @@ def draw_skeleton(frame, points, connections, color=(0, 255, 0)):
         draw_point(frame, point, color=color)
 
     return frame
+
+
+def draw_kendo_skeleton(frame, points, color=(0, 255, 0)):
+    return draw_skeleton(
+        frame,
+        points,
+        KENDO_SKELETON_CONNECTIONS,
+        color=color,
+    )

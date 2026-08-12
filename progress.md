@@ -75,18 +75,19 @@ Phase 6: 结果可视化
 - 已实现并测试 draw_line 骨架连线绘制
 - 已实现并测试 draw_skeleton 基础骨架绘制
 - 已定义并测试 KENDO_SKELETON_CONNECTIONS 默认骨架连接关系
+- 已实现并测试 draw_kendo_skeleton 默认剑道骨架绘制
 
 ## Current task
 
-定义剑道姿态骨架连接关系
+实现指标文本绘制
 
 ## Next task
 
-使用默认骨架连接关系绘制身体骨架
+在视频帧上绘制角度和偏移数值
 
 ## Problems
 
 ## Last verification
 
 - Command: python -m pytest
-- Result: 20 passed in 0.18s
+- Result: 21 passed in 0.19s
