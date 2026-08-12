@@ -19,3 +19,7 @@ def calculate_body_lean_angle(shoulder_midpoint, hip_midpoint):
 
 def calculate_hand_center(left_wrist, right_wrist):
     return midpoint(left_wrist, right_wrist)
+
+
+def calculate_hand_center_offset(hand_center, body_center):
+    return hand_center[0] - body_center[0]

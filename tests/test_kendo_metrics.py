@@ -3,6 +3,7 @@ from src.analysis.kendo_metrics import (
     calculate_body_lean_angle,
     calculate_elbow_angle,
     calculate_hand_center,
+    calculate_hand_center_offset,
     calculate_shoulder_angle,
 )
 
@@ -38,3 +39,17 @@ def test_calculate_hand_center():
     right_wrist = (2, 4)
 
     assert calculate_hand_center(left_wrist, right_wrist) == (1.0, 3.0)
+
+
+def test_calculate_hand_center_offset():
+    hand_center = (7, 3)
+    body_center = (5, 3)
+
+    assert calculate_hand_center_offset(hand_center, body_center) == 2
+
+
+def test_calculate_hand_center_offset_left_side():
+    hand_center = (3, 3)
+    body_center = (5, 3)
+
+    assert calculate_hand_center_offset(hand_center, body_center) == -2

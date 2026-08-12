@@ -68,14 +68,16 @@ Phase 4：人体姿态识别
 - 已实现并测试 shoulder angle 计算
 - 已实现并测试 body lean angle 计算
 - 已实现并测试 hand center 计算
+- 已实现并测试 hand center offset 计算
+
 
 ## Current task
 
-使用左右手腕中点计算双手中心位置
+计算手部中心点相对身体中心线的位置变化
 
 ## Next task
 
-计算手部中心点相对身体中心线的位置变化
+计算手部中心点相对肩膀高度的位置
 
 ## Problems
 
