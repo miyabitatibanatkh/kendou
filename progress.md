@@ -83,14 +83,15 @@ Phase 4：人体姿态识别
 
 ## Last verification
 
+(.venv) E:\GitHub\kendou>python -m pytest
 ===================================== test session starts ======================================
 platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
 rootdir: E:\GitHub\kendou
 plugins: anyio-4.14.2
-collected 11 items                                                                              
+collected 13 items                                                                              
 
-tests\test_geometry.py ....                                                               [ 36%]
-tests\test_kendo_metrics.py ....                                                          [ 72%]
+tests\test_geometry.py ....                                                               [ 30%]
+tests\test_kendo_metrics.py ......                                                        [ 76%]
 tests\test_landmarks.py ...                                                               [100%]
 
-====================================== 11 passed in 0.04s ======================================
+====================================== 13 passed in 0.05s ======================================
