@@ -5,6 +5,7 @@ from src.analysis.kendo_metrics import (
     calculate_hand_center,
     calculate_hand_center_offset,
     calculate_shoulder_angle,
+    calculate_hand_height_offset
 )
 
 def test_calculate_elbow_angle():
@@ -53,3 +54,17 @@ def test_calculate_hand_center_offset_left_side():
     body_center = (5, 3)
 
     assert calculate_hand_center_offset(hand_center, body_center) == -2
+
+
+def test_calculate_hand_height_offset_above_shoulder():
+    hand_center = (5, 3)
+    shoulder_midpoint = (5, 8)
+
+    assert calculate_hand_height_offset(hand_center, shoulder_midpoint) == 5
+
+
+def test_calculate_hand_height_offset_below_shoulder():
+    hand_center = (5, 10)
+    shoulder_midpoint = (5, 8)
+
+    assert calculate_hand_height_offset(hand_center, shoulder_midpoint) == -2

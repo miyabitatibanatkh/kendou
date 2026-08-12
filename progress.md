@@ -69,15 +69,16 @@ Phase 4：人体姿态识别
 - 已实现并测试 body lean angle 计算
 - 已实现并测试 hand center 计算
 - 已实现并测试 hand center offset 计算
+- 已实现并测试 hand height offset 计算
 
 
 ## Current task
 
-计算手部中心点相对身体中心线的位置变化
+计算手部中心点相对肩膀高度的位置
 
 ## Next task
 
-计算手部中心点相对肩膀高度的位置
+整理基础剑道指标函数并准备连接 MediaPipe 关键点
 
 ## Problems
 

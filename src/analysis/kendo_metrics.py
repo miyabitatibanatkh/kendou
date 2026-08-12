@@ -23,3 +23,7 @@ def calculate_hand_center(left_wrist, right_wrist):
 
 def calculate_hand_center_offset(hand_center, body_center):
     return hand_center[0] - body_center[0]
+
+
+def calculate_hand_height_offset(hand_center, shoulder_midpoint):
+    return shoulder_midpoint[1] - hand_center[1]
