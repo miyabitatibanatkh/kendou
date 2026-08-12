@@ -64,14 +64,16 @@ Phase 4：人体姿态识别
 - 已为 landmark_to_pixel 添加单元测试
 - 验证 640×480 图像中的坐标 (0.25, 0.5) 可转换为 (160, 240)
 - 已实现并测试关键点 visibility 可信度检查
+- 已实现并测试 elbow angle 计算
+- 已实现并测试 shoulder angle 计算
 
 ## Current task
 
-实现剑道基础指标计算
+实现身体前倾角度计算
 
 ## Next task
 
-计算肩/肘/身体前倾角度
+使用肩膀中点和臀部中点计算身体躯干相对垂直方向的角度
 
 ## Problems
 
@@ -82,9 +84,10 @@ Phase 4：人体姿态识别
 platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
 rootdir: E:\GitHub\kendou
 plugins: anyio-4.14.2
-collected 7 items                                                                               
+collected 9 items                                                                               
 
-tests\test_geometry.py ....                                                               [ 57%]
+tests\test_geometry.py ....                                                               [ 44%]
+tests\test_kendo_metrics.py ..                                                            [ 66%]
 tests\test_landmarks.py ...                                                               [100%]
 
-====================================== 7 passed in 0.05s =======================================
+====================================== 9 passed in 0.04s =======================================
