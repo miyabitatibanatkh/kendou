@@ -71,27 +71,20 @@ Phase 6: 结果可视化
 - 已实现并测试 hand center offset 计算
 - 已实现并测试 hand height offset 计算
 - 已实现并测试 frame-level kendo metrics 汇总
+- 已实现并测试 draw_point 关键点绘制
 
 
 ## Current task
 
-Phase 6: 结果可视化
+实现骨架连线绘制
 
 ## Next task
 
-在视频帧上绘制关键点和连线
+在视频帧上绘制两个关键点之间的连线
 
 ## Problems
 
 ## Last verification
 
-===================================== test session starts ======================================
-platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
-rootdir: E:\GitHub\kendou
-plugins: anyio-4.14.2
-collected 16 items                                                                              
-tests\test_geometry.py ....                                                               [ 25%]
-tests\test_kendo_metrics.py ........                                                      [ 75%]
-tests\test_landmarks.py ....                                                              [100%]
-
-====================================== 16 passed in 0.05s ======================================
+- Command: python -m pytest
+- Result: 17 passed in 0.35s
