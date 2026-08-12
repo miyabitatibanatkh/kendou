@@ -1,5 +1,15 @@
 import cv2
 
+KENDO_SKELETON_CONNECTIONS = [
+    ("left_shoulder", "right_shoulder"),
+    ("left_shoulder", "left_elbow"),
+    ("left_elbow", "left_wrist"),
+    ("right_shoulder", "right_elbow"),
+    ("right_elbow", "right_wrist"),
+    ("left_shoulder", "left_hip"),
+    ("right_shoulder", "right_hip"),
+    ("left_hip", "right_hip"),
+]
 
 def draw_point(frame, point, color=(0, 255, 0), radius=5):
     x, y = point

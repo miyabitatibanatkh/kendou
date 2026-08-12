@@ -74,14 +74,15 @@ Phase 6: 结果可视化
 - 已实现并测试 draw_point 关键点绘制
 - 已实现并测试 draw_line 骨架连线绘制
 - 已实现并测试 draw_skeleton 基础骨架绘制
+- 已定义并测试 KENDO_SKELETON_CONNECTIONS 默认骨架连接关系
 
 ## Current task
 
-组合多个关键点和连线绘制身体骨架
+定义剑道姿态骨架连接关系
 
 ## Next task
 
-定义剑道姿态骨架连接关系
+使用默认骨架连接关系绘制身体骨架
 
 ## Problems
 
