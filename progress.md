@@ -89,15 +89,15 @@ Phase 7: 数据导出
 - 验证 heavy 模型对护具和背面视频提升有限
 - 记录结论：通用视觉姿态模型对剑道护具、竹刀遮挡、背面视角不稳定
 - 完成 Phase 6：结果可视化
+- 实现 create_metric_row，将单帧分析指标转换为 CSV 行数据
 
 
 ## Current task
 
-设计每帧分析指标的数据结构
-
+将每帧指标导出为 CSV
 ## Next task
 
-将每帧指标导出为 CSV
+在视频处理流程中收集每帧指标
 
 ## Problems
 
@@ -106,5 +106,19 @@ Phase 7: 数据导出
 
 ## Last verification
 
-- Command: python run_analysis.py
-- Result: processed 6412 frames, detected 6412 frames, missing 0 frames, FPS 29.97, 1920x1080
+(.venv) E:\GitHub\kendou>python -m pytest
+====================================================== test session starts =======================================================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
+rootdir: E:\GitHub\kendou
+plugins: anyio-4.14.2
+collected 31 items                                                                                                                
+
+tests\test_csv_exporter.py ..                                                                                               [  6%]
+tests\test_frame_processor.py ..                                                                                            [ 12%]
+tests\test_geometry.py ....                                                                                                 [ 25%]
+tests\test_kendo_metrics.py ..........                                                                                      [ 58%]
+tests\test_landmarks.py .....                                                                                               [ 74%]
+tests\test_overlay.py .......                                                                                               [ 96%]
+tests\test_video_processor.py .                                                                                             [100%]
+
+======================================================= 31 passed in 0.86s =======================================================
