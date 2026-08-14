@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Phase 6: 结果可视化
+Phase 7: 数据导出
 
 ## Completed
 
@@ -88,16 +88,16 @@ Phase 6: 结果可视化
 - 添加输出视频统计：总帧数、检测成功帧数、失败帧数、FPS、宽高
 - 验证 heavy 模型对护具和背面视频提升有限
 - 记录结论：通用视觉姿态模型对剑道护具、竹刀遮挡、背面视角不稳定
-
+- 完成 Phase 6：结果可视化
 
 
 ## Current task
 
-评估 MediaPipe baseline 的局限，并规划下一阶段识别方案
+设计每帧分析指标的数据结构
 
 ## Next task
 
-继续优化 main 分支文档和实验记录，保留 MediaPipe 作为 baseline
+将每帧指标导出为 CSV
 
 ## Problems
 
