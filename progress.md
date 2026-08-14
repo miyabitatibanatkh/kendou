@@ -83,20 +83,28 @@ Phase 6: 结果可视化
 - 实现 process_detected_frame，处理单帧姿态结果并绘制分析信息
 - 实现 process_video，逐帧检测姿态、绘制分析结果并写入输出视频
 - 测试 process_video，可以逐帧处理并写入输出视频
+- 创建 run_analysis.py，用真实 MediaPipe 模型处理输入视频
+- 将 MediaPipe 检测改为视频模式，使用 timestamp_ms 逐帧检测
+- 添加输出视频统计：总帧数、检测成功帧数、失败帧数、FPS、宽高
+- 验证 heavy 模型对护具和背面视频提升有限
+- 记录结论：通用视觉姿态模型对剑道护具、竹刀遮挡、背面视角不稳定
 
 
 
 ## Current task
 
-测试整段视频分析流程
+评估 MediaPipe baseline 的局限，并规划下一阶段识别方案
 
 ## Next task
 
-接入真实 MediaPipe 模型生成分析视频
+继续优化 main 分支文档和实验记录，保留 MediaPipe 作为 baseline
 
 ## Problems
 
+- MediaPipe 对穿护具、背面视角、竹刀遮挡和快速挥动不稳定
+- heavy 模型提升有限，问题主要来自通用人体姿态模型不适配剑道场景
+
 ## Last verification
 
-- Command: python -m pytest
-- Result: 29 passed in 1.45s 
+- Command: python run_analysis.py
+- Result: processed 6412 frames, detected 6412 frames, missing 0 frames, FPS 29.97, 1920x1080
